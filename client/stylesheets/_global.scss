@@ -1,0 +1,21 @@
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  color: $black;
+  font-family: $font-primary;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+}
+
+a {
+  color: $secondary;
+  &:hover {
+    color: $tertiary;
+  }
+}
+
+p {
+  font-weight: bold;
+}

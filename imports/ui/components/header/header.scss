@@ -1,0 +1,49 @@
+.header {
+  font-size: 2.4rem;
+  font-family: $font-secondary;
+  background-color: $primary;
+}
+
+.navbar {
+  border-radius: 0;
+}
+
+.nav {
+  .open,
+  & > li {
+    & > a {
+      background: none;
+      border-color: transparent;
+      color: $white;
+      &:hover,
+      &:visited,
+      &:focus,
+      &:active {
+        color: $white;
+        background: none;
+        outline: none;
+      }
+      &:hover,
+      &:active {
+        color: $tertiary;
+      }
+    }
+  }
+}
+
+.navbar-brand {
+  font-size: 2.4rem;
+  color: $white;
+  &:hover,
+  &:visited,
+  &:focus,
+  &:active {
+    color: $white;
+    background: none;
+    outline: none;
+  }
+  &:hover,
+  &:active {
+    color: $tertiary;
+  }
+}
