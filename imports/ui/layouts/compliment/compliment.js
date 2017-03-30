@@ -16,6 +16,14 @@ Template.compliment.helpers({
 Template.compliment.events({
   'click button': function() {
     var word = $('#word').val();
-    console.log(word);
+    var sender = Meteor.userId();
+    var receiver = Template.instance().data._id;
+    Meteor.call('compliments.create', word, sender, receiver, function(err, rec) {
+      if (err) {
+        console.log(err);
+      } else {
+        Router.go('friends');
+      }
+    });
   }
 })
