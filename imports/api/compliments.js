@@ -2,8 +2,8 @@ Meteor.publish("compliment", function(sender, receiver) {
   return Compliments.find({"sender": sender, "receiver": receiver});
 });
 
-Meteor.publish("compliments", function() {
-  return Words.find();
+Meteor.publish("userCompliments", function(id) {
+  return Compliments.find({$or: [{"sender": id}, {"receiver": id}]});
 });
 
 Meteor.methods({

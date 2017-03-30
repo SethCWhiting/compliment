@@ -5,7 +5,14 @@ h4,
 h5,
 h6 {
   font-family: $font-secondary;
+}
+
+h1 {
   color: $secondary;
+}
+
+h4 {
+  color: $tertiary;
 }
 
 a {
