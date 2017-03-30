@@ -1,0 +1,19 @@
+<template name="friends">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <table class="table table-striped table-hover">
+          <tbody>
+            {{#each friends}}
+              <tr>
+                <td>
+                  <a href="/friends/{{_id}}">{{profile.firstname}} {{profile.lastname}}</a>
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>

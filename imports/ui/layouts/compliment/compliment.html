@@ -1,0 +1,18 @@
+<template name="compliment">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <h1>{{friend.profile.firstname}} {{friend.profile.lastname}}</h1>
+        <div class="form-group">
+          <select name="word" id="word" class="form-control">
+            <option value="">Select Compliment</option>
+            {{#each words}}
+              <option value="{{_id._str}}">{{value}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <button class="btn btn-lg btn-success">Send Compliment</button>
+      </div>
+    </div>
+  </div>
+</template>

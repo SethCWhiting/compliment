@@ -7,3 +7,23 @@ h6 {
   font-family: $font-secondary;
   color: $secondary;
 }
+
+a {
+  color: $secondary;
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    text-decoration: none;
+  }
+  &:hover {
+    color: $tertiary;
+  }
+}
+
+p,
+li,
+td,
+th {
+  font-weight: bold;
+}
