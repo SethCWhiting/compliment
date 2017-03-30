@@ -33,8 +33,6 @@ Template.compliment.events({
       Meteor.call('compliments.create', word, sender, receiver, function(err, rec) {
         if (err) {
           console.log(err);
-        } else {
-          Router.go('friends');
         }
       });
     }
