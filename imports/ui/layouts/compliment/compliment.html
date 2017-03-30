@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3">
-        <h1>{{friend.profile.firstname}} {{friend.profile.lastname}}</h1>
+        <h1>{{friend.profile.firstname}} {{friend.profile.lastname}} is...</h1>
         <div class="form-group">
           <select name="word" id="word" class="form-control">
             <option value="">Select Compliment</option>
@@ -11,7 +11,9 @@
             {{/each}}
           </select>
         </div>
-        <button class="btn btn-lg btn-success">Send Compliment</button>
+        {{#if selected}}
+          <button class="btn btn-lg btn-success">Send Compliment</button>
+        {{/if}}
       </div>
     </div>
   </div>

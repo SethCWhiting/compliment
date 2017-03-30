@@ -9,19 +9,40 @@ body {
   letter-spacing: 0.05em;
 }
 
+.btn {
+  font-size: 2.4rem;
+  letter-spacing: 0.05em;
+  outline: none;
+  font-family: $font-secondary;
+  &:active,
+  &:active:focus,
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+}
+
 .btn-success {
   background-color: $primary;
-  font-weight: bold;
   border-color: $primary;
-  font-size: 2.4rem;
-  outline: none;
   &:active,
   &:active:focus,
   &:focus,
   &:hover {
     background-color: darken($primary, 5);
     border-color: darken($primary, 5);
-    outline: none;
+  }
+}
+
+.btn-primary {
+  background-color: $secondary;
+  border-color: $secondary;
+  &:active,
+  &:active:focus,
+  &:focus,
+  &:hover {
+    background-color: $tertiary;
+    border-color: $tertiary;
   }
 }
 

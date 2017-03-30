@@ -1,5 +1,5 @@
-Meteor.publish("users", function(){
-  return Meteor.users.find();
+Meteor.publish("friends", function(id){
+  return Meteor.users.find({"_id": {$ne: id}});
 });
 
 Meteor.publish("user", function(id){
