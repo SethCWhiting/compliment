@@ -4,6 +4,7 @@ import '/imports/ui/components/kiwi/kiwi.js';
 import '/imports/ui/layouts/home/home.js';
 import '/imports/ui/layouts/profile/profile.js';
 import '/imports/ui/layouts/friends/friends.js';
+import '/imports/ui/layouts/words/words.js';
 import '/imports/ui/layouts/compliment/compliment.js';
 
 Router.route('/', function () {
@@ -13,6 +14,7 @@ Router.route('/', function () {
 Router.route('/home/', {name: 'home'});
 Router.route('/profile/', {name: 'profile'});
 Router.route('/friends/', {name: 'friends'});
+Router.route('/words/', {name: 'words'});
 Router.route('/friends/:id', function() {
   if (this.params.id === Meteor.userId()) {
     this.render('profile', {

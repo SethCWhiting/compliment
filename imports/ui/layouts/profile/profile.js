@@ -14,7 +14,7 @@ Template.profile.helpers({
   },
   received: function() {
     var total = Compliments.find({'receiver': Template.instance().data._id}).count();
-    var word = Compliments.find({'value': this._id._str, 'receiver': Template.instance().data._id}).count();
+    var word = Compliments.find({'value': this._id, 'receiver': Template.instance().data._id}).count();
     return Math.round((word / total) * 100);
   },
   words: function() {

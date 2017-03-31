@@ -1,0 +1,42 @@
+<template name="words">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <h1>Words</h1>
+        <div class="row">
+          <div class="col-sm-6">
+            <h4>Tap any word to edit</h4>
+          </div>
+          {{#unless creating}}
+            <div class="col-sm-6 text-right">
+              <h4 class="addWord"><span class="glyphicon glyphicon-plus"></span>Word</h4>
+            </div>
+          {{/unless}}
+        </div>
+        <table class="table table-striped row">
+          <tbody>
+            {{#if creating}}
+              <tr class="creating">
+                <td><input type="text" class="form-control" value="{{value}}" autofocus /></td>
+                <td class="text-right"><span class="glyphicon glyphicon-ok"></span></td>
+              </tr>
+            {{/if}}
+            {{#each words}}
+              {{#if editing}}
+                <tr class="editing">
+                  <td><input type="text" class="form-control" value="{{value}}" autofocus /></td>
+                  <td class="text-right"><span class="glyphicon glyphicon-ok"></span></td>
+                </tr>
+              {{else}}
+                <tr>
+                  <td class="edit">{{value}}</td>
+                  <td class="text-right"><span class="glyphicon glyphicon-remove"></span></td>
+                </tr>
+              {{/if}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>

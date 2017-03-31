@@ -14,5 +14,8 @@ Meteor.methods({
       "receiver": receiver,
       "createdAt": new Date()
     });
+  },
+  'compliments.wordCount'(word) {
+    return Compliments.find({"value": word}).count();
   }
 });
