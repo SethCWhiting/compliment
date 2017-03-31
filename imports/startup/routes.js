@@ -1,17 +1,16 @@
 import '/imports/ui/components/header/header.js';
-import '/imports/ui/components/kiwi/kiwi.js';
 
-import '/imports/ui/layouts/home/home.js';
+import '/imports/ui/layouts/kiwi/kiwi.js';
 import '/imports/ui/layouts/profile/profile.js';
 import '/imports/ui/layouts/friends/friends.js';
 import '/imports/ui/layouts/words/words.js';
 import '/imports/ui/layouts/compliment/compliment.js';
 
 Router.route('/', function () {
-  this.render('home');
+  this.render('kiwi');
 });
 
-Router.route('/home/', {name: 'home'});
+Router.route('/kiwi/', {name: 'kiwi'});
 Router.route('/profile/', {name: 'profile'});
 Router.route('/friends/', {name: 'friends'});
 Router.route('/words/', {name: 'words'});
@@ -38,4 +37,16 @@ Router.route('/friends/:id', function() {
       this.render('kiwi');
     }
   }
+});
+
+Router.onBeforeAction(function () {
+  var current_route = Router.current().route.getName() ? Router.current().route.getName() : 'kiwi';
+  if (!Meteor.userId()) {
+    current_route = 'kiwi';
+    this.render('kiwi');
+  } else {
+    this.next();
+  }
+  $('body').removeClass();
+  $('body').addClass(current_route);
 });

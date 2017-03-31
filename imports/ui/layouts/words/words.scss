@@ -1,27 +1,29 @@
-h4.addWord {
-  cursor: pointer;
-  color: $primary;
-  display: inline-block;
-  &:hover,
-  &:active {
-    color: $tertiary;
-  }
-}
-td.text-right {
-  width: 40px;
-  cursor: pointer;
-  .glyphicon-ok {
+.words {
+  h4.addWord {
+    cursor: pointer;
     color: $primary;
+    display: inline-block;
     &:hover,
     &:active {
       color: $tertiary;
     }
   }
-  .glyphicon-remove {
-    color: $secondary;
-    &:hover,
-    &:active {
-      color: $tertiary;
+  td.text-right {
+    width: 40px;
+    cursor: pointer;
+    .glyphicon-ok {
+      color: $primary;
+      &:hover,
+      &:active {
+        color: $tertiary;
+      }
+    }
+    .glyphicon-remove {
+      color: $secondary;
+      &:hover,
+      &:active {
+        color: $tertiary;
+      }
     }
   }
 }

@@ -5,3 +5,9 @@ Meteor.publish("friends", function(id){
 Meteor.publish("user", function(id){
   return Meteor.users.find({"_id": id});
 });
+
+Meteor.methods({
+  'users.getByEmail'(email) {
+    return Accounts.findUserByEmail('sethcwhiting@gmail.com');
+  }
+});

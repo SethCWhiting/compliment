@@ -4,7 +4,10 @@ Meteor.publish("words", function(){
 
 Meteor.methods({
   'words.create'(val) {
-    return Words.insert({"value": val});
+    return Words.insert({
+      "value": val,
+      "createdAt": new Date()
+    });
   },
   'words.update'(id, val) {
     return Words.update({"_id": id}, {$set: {"value": val}});
