@@ -48,3 +48,10 @@
     color: $tertiary;
   }
 }
+
+.navbar-toggle {
+  border-color: $white;
+  .icon-bar {
+    background-color: $white;
+  }
+}
