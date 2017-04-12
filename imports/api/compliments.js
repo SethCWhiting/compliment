@@ -1,3 +1,7 @@
+Meteor.publish("compliments", function() {
+  return Compliments.find();
+});
+
 Meteor.publish("compliment", function(sender, receiver) {
   return Compliments.find({"sender": sender, "receiver": receiver});
 });
