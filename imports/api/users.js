@@ -8,6 +8,9 @@ Meteor.publish("user", function(id){
 
 Meteor.methods({
   'users.getByEmail'(email) {
-    return Accounts.findUserByEmail('sethcwhiting@gmail.com');
+    return Accounts.findUserByEmail(email);
+  },
+  'users.name'(id, first, last) {
+    return Meteor.users.update({"_id": id}, {"$set": {"profile": {"firstname": first, "lastname": last}}});
   }
 });

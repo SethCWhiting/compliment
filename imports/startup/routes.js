@@ -1,22 +1,28 @@
 import '/imports/ui/components/header/header.js';
 
 import '/imports/ui/layouts/kiwi/kiwi.js';
+import '/imports/ui/layouts/naming/naming.js';
 import '/imports/ui/layouts/profile/profile.js';
 import '/imports/ui/layouts/friends/friends.js';
 import '/imports/ui/layouts/words/words.js';
 import '/imports/ui/layouts/compliment/compliment.js';
 
 Router.route('/', function () {
-  if (Meteor.userId()) {
-    this.render('profile', {
-      data: function () {
-        return Meteor.user();
-      }
-    });
+  if (Meteor.user()) {
+    if (Meteor.user().profile.firstname) {
+      this.render('profile', {
+        data: function () {
+          return Meteor.user();
+        }
+      });
+    } else {
+      this.render('naming');
+    }
   }
 });
 
 Router.route('/kiwi/', {name: 'kiwi'});
+Router.route('/name/', {name: 'naming'});
 Router.route('/profile/', {name: 'profile'});
 Router.route('/friends/', {name: 'friends'});
 Router.route('/words/', {name: 'words'});
@@ -39,7 +45,7 @@ Router.route('/friends/:id', function() {
 
 Router.onBeforeAction(function () {
   var current_route = Router.current().route.getName() ? Router.current().route.getName() : 'profile';
-  if (!Meteor.userId()) {
+  if (!Meteor.user()) {
     current_route = 'kiwi';
     this.render('kiwi');
   } else {
