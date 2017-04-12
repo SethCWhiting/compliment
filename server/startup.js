@@ -1,6 +1,7 @@
 Meteor.startup(function() {
-  // GENERATE FAKE DATA --------------------------------------------------------
+
   if (Meteor.settings.public.test_mode) {
+    // GENERATE FAKE USERS -----------------------------------------------------
     if (Meteor.users.find().count() < 100) {
       Accounts.createUser({
         'email': faker.internet.email(),
@@ -11,7 +12,7 @@ Meteor.startup(function() {
         }
       });
     }
-
+    // GENERATE FAKE COMPLIMENTS -----------------------------------------------
     if (Compliments.find().count() < 500) {
       var randSender = Math.floor(Meteor.users.find().count() * Math.random());
       var randReceiver = Math.floor(Meteor.users.find().count() * Math.random());
@@ -23,6 +24,7 @@ Meteor.startup(function() {
         Meteor.call('compliments.create', word, sender, receiver);
       }
     }
+    // END FAKE DATA -----------------------------------------------------------
   }
 
   Meteor.call('users.getByEmail', Meteor.settings.private.admin_email, function(err, res) {
