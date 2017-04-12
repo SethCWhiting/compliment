@@ -1,7 +1,8 @@
 .kiwi {
   background-color: $primary;
-  h1 {
+  img {
     margin-top: 30%;
-    color: $white;
+    display: inline-block;
+    max-width: 22rem;
   }
 }
