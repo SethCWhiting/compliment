@@ -3,63 +3,25 @@ body {
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-  color: $black;
+  color: $white;
   font-family: $font-primary;
   font-size: 2rem;
   letter-spacing: 0.05em;
+  background-color: $primary;
 }
 
 img {
   width: 100%;
 }
 
-.btn {
-  font-size: 2.4rem;
-  letter-spacing: 0.05em;
-  outline: none;
-  font-family: $font-secondary;
-  &:active,
-  &:active:focus,
-  &:focus,
-  &:hover {
-    outline: none;
-  }
-}
-
-.btn-success {
-  background-color: $primary;
-  border-color: $primary;
-  &:active,
-  &:active:focus,
-  &:focus,
-  &:hover {
-    background-color: darken($primary, 5);
-    border-color: darken($primary, 5);
-  }
-}
-
-.btn-primary {
-  background-color: $secondary;
-  border-color: $secondary;
-  &:active,
-  &:active:focus,
-  &:focus,
-  &:hover {
-    background-color: $tertiary;
-    border-color: $tertiary;
-  }
-}
-
 select.form-control {
   font-size: 2.4rem;
   letter-spacing: 0.1em;
   font-weight: bold;
-  color: $black;
+  background-color: $white;
+  color: $primary;
   height: 38px;
   outline: none;
+  border: none;
   text-transform: uppercase;
-}
-
-td a {
-  display: block;
 }

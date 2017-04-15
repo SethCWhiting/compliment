@@ -1,0 +1,36 @@
+.btn {
+  font-size: 2.4rem;
+  letter-spacing: 0.05em;
+  outline: none;
+  font-family: $font-secondary;
+  &:active,
+  &:active:focus,
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+}
+
+.btn-success {
+  background-color: $tertiary;
+  border-color: $tertiary;
+  &:active,
+  &:active:focus,
+  &:focus,
+  &:hover {
+    background-color: darken($tertiary, 5);
+    border-color: darken($tertiary, 5);
+  }
+}
+
+.btn-primary {
+  background-color: $secondary;
+  border-color: $secondary;
+  &:active,
+  &:active:focus,
+  &:focus,
+  &:hover {
+    background-color: $tertiary;
+    border-color: $tertiary;
+  }
+}
