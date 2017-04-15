@@ -1,25 +1,22 @@
 .words {
   h4.addWord {
     cursor: pointer;
-    color: $tertiary;
     display: inline-block;
     &:hover,
     &:active {
-      color: $quaternary;
+      color: $secondary;
     }
   }
-  td.text-right {
-    width: 40px;
+  tr {
     cursor: pointer;
-    .glyphicon-ok {
-      color: $tertiary;
-      &:hover,
-      &:active {
-        color: $quaternary;
-      }
+    &:hover,
+    &:active {
+      color: $secondary;
+    }
+    .text-right {
+      width: 40px;
     }
     .glyphicon-remove {
-      color: $secondary;
       &:hover,
       &:active {
         color: $tertiary;

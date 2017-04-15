@@ -19,13 +19,21 @@ img {
 }
 
 select.form-control {
+  text-transform: uppercase;
+}
+
+.form-control {
   font-size: 2.4rem;
   letter-spacing: 0.1em;
   font-weight: bold;
+  height: 38px;
   background-color: $white;
   color: $primary;
-  height: 38px;
-  outline: none;
-  border: none;
-  text-transform: uppercase;
+  border-color: $primary;
+  box-shadow: none;
+  &:active,
+  &:focus {
+    border-color: $primary;
+    box-shadow: none;
+  }
 }
