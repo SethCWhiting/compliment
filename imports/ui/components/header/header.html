@@ -9,15 +9,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        {{#if hasName}}
-          <a class="navbar-brand" href="/">me</a>
-        {{/if}}
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           {{#if hasName}}
+            <li><a href="/">me</a></li>
             <li><a href="/friends">friends</a></li>
             {{#if isInRole 'admin,teacher'}}
               <li><a href="/words">words</a></li>

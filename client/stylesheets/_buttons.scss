@@ -11,26 +11,26 @@
   }
 }
 
-.btn-success {
-  background-color: $tertiary;
-  border-color: $tertiary;
-  &:active,
-  &:active:focus,
-  &:focus,
+.btn-default {
+  background-color: $white;
+  color: $primary;
+  border-color: $primary;
   &:hover {
-    background-color: darken($tertiary, 5);
-    border-color: darken($tertiary, 5);
+    color: $white;
+    background-color: $primary;
+    border-color: $white;
   }
 }
 
 .btn-primary {
   background-color: $secondary;
   border-color: $secondary;
+  color: $white;
   &:active,
   &:active:focus,
   &:focus,
   &:hover {
-    background-color: $tertiary;
-    border-color: $tertiary;
+    background-color: darken($secondary, 5);
+    border-color: darken($secondary, 5);
   }
 }
