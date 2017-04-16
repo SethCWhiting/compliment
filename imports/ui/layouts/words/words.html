@@ -9,33 +9,37 @@
           </div>
           {{#unless creating}}
             <div class="col-sm-6 text-right">
-              <h4 class="addWord"><span class="glyphicon glyphicon-plus"></span>Word</h4>
+              <h4 class="addWord"><span class="glyphicon glyphicon-plus"></span> Word</h4>
             </div>
           {{/unless}}
         </div>
-        <table class="table table-striped row">
-          <tbody>
-            {{#if creating}}
-              <tr class="creating">
-                <td><input type="text" class="form-control" value="{{value}}" autofocus /></td>
-                <td class="text-right"><span class="glyphicon glyphicon-ok"></span></td>
-              </tr>
-            {{/if}}
-            {{#each words}}
-              {{#if editing}}
-                <tr class="editing">
-                  <td><input type="text" class="form-control" value="{{value}}" autofocus /></td>
-                  <td class="text-right"><span class="glyphicon glyphicon-ok"></span></td>
-                </tr>
-              {{else}}
-                <tr>
-                  <td class="edit">{{value}}</td>
-                  <td class="text-right"><span class="glyphicon glyphicon-remove"></span></td>
-                </tr>
-              {{/if}}
-            {{/each}}
-          </tbody>
-        </table>
+        <div class="row">
+          <div class="col-sm-12">
+            <table class="table table-striped">
+              <tbody>
+                {{#if creating}}
+                  <tr class="creating">
+                    <td><input type="text" class="form-control" value="{{value}}" autofocus /></td>
+                    <td class="text-right"><span class="glyphicon glyphicon-ok"></span></td>
+                  </tr>
+                {{/if}}
+                {{#each words}}
+                  {{#if editing}}
+                    <tr class="editing">
+                      <td><input type="text" class="form-control" value="{{value}}" autofocus /></td>
+                      <td class="text-right"><span class="glyphicon glyphicon-ok"></span></td>
+                    </tr>
+                  {{else}}
+                    <tr>
+                      <td class="edit">{{value}}</td>
+                      <td class="text-right"><span class="glyphicon glyphicon-remove"></span></td>
+                    </tr>
+                  {{/if}}
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
