@@ -1,0 +1,9 @@
+<template name="time">
+  <div class="time">
+    <select class="form-control">
+      {{#each times}}
+        <option value="{{val}}" selected="{{selected}}">{{text}}</option>
+      {{/each}}
+    </select>
+  </div>
+</template>

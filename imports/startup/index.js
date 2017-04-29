@@ -1,3 +1,3 @@
-import './startup.js';
+import './defaults.js';
 import './routes.js';
 import './global.js';

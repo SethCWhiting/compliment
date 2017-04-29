@@ -1,4 +1,5 @@
 import '/imports/ui/components/header/header.js';
+import '/imports/ui/components/time/time.js';
 
 import '/imports/ui/layouts/kiwi/kiwi.js';
 import '/imports/ui/layouts/naming/naming.js';
