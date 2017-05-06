@@ -32,7 +32,9 @@ Router.route('/friends/:id', function() {
   this.wait(Meteor.subscribe('compliment', Meteor.userId(), this.params.id));
   if (this.ready()) {
     var data = Meteor.users.findOne({'_id': this.params.id});
-    var complimented = Compliments.findOne({'sender': Meteor.userId(), 'receiver': this.params.id});
+    var today = new Date().getTime();
+    var yesterday = new Date(today - 86400000);
+    var complimented = Compliments.findOne({'sender': Meteor.userId(), 'receiver': this.params.id, 'createdAt': { $gte : yesterday}});
     var template = complimented ? 'profile' : 'compliment';
     this.render(template, {
       data: function () {
