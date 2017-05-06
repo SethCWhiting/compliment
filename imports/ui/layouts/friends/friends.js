@@ -6,9 +6,11 @@ Template.friends.onCreated(function() {
 });
 
 Template.friends.onRendered(function() {
+  $('tbody').css('opacity', 0);
   setTimeout(function() {
     $('table').tablesorter({sortList: [[2,1]]});
-  }, 1000);
+    $('tbody').animate({'opacity': 1}, 250);
+  }, 500);
 });
 
 Template.friends.helpers({
@@ -22,8 +24,10 @@ Template.friends.helpers({
 
 Template.friends.events({
   'change select': function() {
+    $('tbody').css('opacity', 0);
     setTimeout(function() {
-      $('table').tablesorter({sortList: [[2,1]]});
-    }, 1000);
+      $('table').trigger('update');
+      $('tbody').animate({'opacity': 1}, 250);
+    }, 500);
   }
 });
