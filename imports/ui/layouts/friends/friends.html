@@ -20,17 +20,19 @@
           </thead>
           <tbody>
             {{#each friends}}
-              <tr>
-                <td>
-                  <a href="/friends/{{_id}}">{{profile.firstname}}</a>
-                </td>
-                <td>
-                  <a href="/friends/{{_id}}">{{profile.lastname}}</a>
-                </td>
-                <td class="text-right">
-                  <a href="/friends/{{_id}}">{{compliments}}</a>
-                </td>
-              </tr>
+              {{#if visible}}
+                <tr>
+                  <td>
+                    <a href="/friends/{{_id}}">{{profile.firstname}}</a>
+                  </td>
+                  <td>
+                    <a href="/friends/{{_id}}">{{profile.lastname}}</a>
+                  </td>
+                  <td class="text-right">
+                    <a href="/friends/{{_id}}">{{compliments}}</a>
+                  </td>
+                </tr>
+              {{/if}}
             {{/each}}
           </tbody>
         </table>

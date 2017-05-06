@@ -19,6 +19,14 @@ Template.friends.helpers({
   },
   compliments: function() {
     return Compliments.find({'sender': this._id, 'createdAt': {$gte : getRange()}}).count();
+  },
+  visible: function() {
+    var loggedInUser = Meteor.user();
+    if (Roles.userIsInRole(loggedInUser, ['admin','teacher'])) {
+      return true;
+    } else {
+      return !Roles.userIsInRole(this._id, ['admin','teacher'])
+    }
   }
 });
 
