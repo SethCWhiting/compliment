@@ -21,7 +21,13 @@ Meteor.startup(function() {
         var word = Words.find({}, {limit: 1, skip: randWord}).fetch()[0]._id;
         var sender = Meteor.users.find({}, {limit: 1, skip: randSender}).fetch()[0]._id;
         var receiver = Meteor.users.find({}, {limit: 1, skip: randReceiver}).fetch()[0]._id;
-        Meteor.call('compliments.create', word, sender, receiver);
+        Meteor.call('compliments.create', word, sender, receiver, function(err, res) {
+          if (res) {
+            Meteor.call('users.send', sender);
+          } else {
+            console.log(err);
+          }
+        });
       }
     }
     // END FAKE DATA -----------------------------------------------------------

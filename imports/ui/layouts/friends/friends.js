@@ -16,6 +16,8 @@ Template.friends.helpers({
     return Meteor.users.find({"_id": {$ne: Meteor.userId()}}).fetch();
   },
   compliments: function() {
+    // console.log(this.sent.length);
+    // return this.sent ? this.sent.length : 0;
     return Compliments.find({'sender': this._id, 'createdAt': {$gte : getRange()}}).count();
   }
 });

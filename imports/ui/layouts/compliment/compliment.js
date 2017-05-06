@@ -30,8 +30,10 @@ Template.compliment.events({
     var sender = Meteor.userId();
     var receiver = Template.instance().data._id;
     if (word !== 'blank') {
-      Meteor.call('compliments.create', word, sender, receiver, function(err, rec) {
-        if (err) {
+      Meteor.call('compliments.create', word, sender, receiver, function(err, res) {
+        if (res) {
+          Meteor.call('users.send', sender);
+        } else {
           console.log(err);
         }
       });
