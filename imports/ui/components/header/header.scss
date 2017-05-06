@@ -2,56 +2,55 @@
   font-size: 2.4rem;
   font-family: $font-secondary;
   background-color: $primary;
-}
-
-.navbar {
-  border-radius: 0;
-}
-
-.nav {
-  .open,
-  & > li {
-    font-weight: normal;
-    & > a {
-      background: none;
-      border-color: transparent;
-      color: $white;
-      &:hover,
-      &:visited,
-      &:focus,
-      &:active {
-        color: $white;
+  .navbar {
+    border-radius: 0;
+  }
+  .nav {
+    .open,
+    & > li {
+      font-weight: normal;
+      & > a {
         background: none;
-        outline: none;
-      }
-      &:hover,
-      &:active {
-        color: $secondary;
+        border-color: transparent;
+        color: $white;
+        &:hover,
+        &:visited,
+        &:focus,
+        &:active {
+          color: $white;
+          background: none;
+          outline: none;
+        }
+        &:hover,
+        &:active {
+          color: $secondary;
+        }
       }
     }
   }
-}
-
-.navbar-brand {
-  font-size: 3rem;
-  color: $white;
-  &:hover,
-  &:visited,
-  &:focus,
-  &:active {
+  .navbar-brand {
+    font-size: 3rem;
     color: $white;
-    background: none;
-    outline: none;
+    &:hover,
+    &:visited,
+    &:focus,
+    &:active {
+      color: $white;
+      background: none;
+      outline: none;
+    }
+    &:hover,
+    &:active {
+      color: $secondary;
+    }
   }
-  &:hover,
-  &:active {
-    color: $secondary;
+  .navbar-toggle {
+    border-color: $white;
+    .icon-bar {
+      background-color: $white;
+    }
   }
-}
-
-.navbar-toggle {
-  border-color: $white;
-  .icon-bar {
-    background-color: $white;
+  .form-control {
+    font-family: $font-primary;
   }
 }
