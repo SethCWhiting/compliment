@@ -15,8 +15,8 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           {{#if hasName}}
-            <li><a href="/">me</a></li>
-            <li><a href="/friends">friends</a></li>
+            <li><a href="/">friends</a></li>
+            <li><a href="/me">me</a></li>
             {{#if isInRole 'admin,teacher'}}
               <li><a href="/words">words</a></li>
             {{/if}}

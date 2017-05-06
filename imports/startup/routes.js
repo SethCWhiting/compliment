@@ -11,7 +11,7 @@ import '/imports/ui/layouts/compliment/compliment.js';
 Router.route('/', function () {
   if (Meteor.user()) {
     if (Meteor.user().profile.firstname) {
-      this.render('profile', {
+      this.render('friends', {
         data: function () {
           return Meteor.user();
         }
@@ -20,6 +20,14 @@ Router.route('/', function () {
       this.render('naming');
     }
   }
+});
+
+Router.route('/me/', function () {
+  this.render('profile', {
+    data: function () {
+      return Meteor.user();
+    }
+  });
 });
 
 Router.route('/kiwi/', {name: 'kiwi'});
