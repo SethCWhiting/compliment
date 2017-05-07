@@ -2,7 +2,8 @@ import './compliment.html';
 
 Template.compliment.onCreated(function() {
   Meteor.subscribe("words");
-  this.selected = new ReactiveVar( false );
+  this.selected = new ReactiveVar(false);
+  this.sending = new ReactiveVar(false);
 });
 
 Template.compliment.helpers({
@@ -14,6 +15,9 @@ Template.compliment.helpers({
   },
   selected: function() {
     return Template.instance().selected.get();
+  },
+  showSending: function() {
+    return Template.instance().sending.get();
   }
 });
 
@@ -30,11 +34,18 @@ Template.compliment.events({
     var sender = Meteor.userId();
     var receiver = Template.instance().data._id;
     if (word !== 'blank') {
-      Meteor.call('compliments.create', word, sender, receiver, function(err, rec) {
-        if (err) {
-          console.log(err);
-        }
-      });
+      Template.instance().sending.set(true);
+      setTimeout(function() {
+        Meteor.call('compliments.create', word, sender, receiver, function(err, rec) {
+          if (err) {
+            console.log(err);
+          }
+        });
+      }, 3000);
     }
   }
+});
+
+Template.compliment.onDestroyed(function() {
+  Template.instance().sending.set(false);
 })
