@@ -3,7 +3,9 @@ Meteor.startup(function() {
   if (Meteor.settings.public.test_mode) {
     // GENERATE FAKE USERS -----------------------------------------------------
     if (Meteor.users.find().count() < 100) {
+      console.log(Meteor.users.find().count());
       Accounts.createUser({
+        'username': faker.internet.userName(),
         'email': faker.internet.email(),
         'password': 'password',
         'profile': {

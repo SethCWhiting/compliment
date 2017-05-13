@@ -9,6 +9,9 @@ Template.profile.helpers({
   friend: function() {
     return Template.instance().data;
   },
+  isMe: function() {
+    return Template.instance().data._id === Meteor.userId();
+  },
   sent: function() {
     return Compliments.find({'sender': Template.instance().data._id, 'createdAt': {$gte : getRange()}}).count();
   },

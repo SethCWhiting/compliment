@@ -8,7 +8,7 @@ Template.friends.onCreated(function() {
 Template.friends.onRendered(function() {
   $('tbody').css('opacity', 0);
   setTimeout(function() {
-    $('table').tablesorter({sortList: [[2,1]]});
+    $('table').tablesorter({sortList: [[1,1]]});
     $('tbody').animate({'opacity': 1}, 250);
   }, 500);
 });

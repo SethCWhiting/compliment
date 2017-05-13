@@ -13,20 +13,16 @@
         <table class="table table-striped table-hover">
           <thead>
             <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
+              <th>Username</th>
               <th class="text-right"><span class="hidden-xs">Compliments</span> Sent</th>
             </tr>
           </thead>
           <tbody>
             {{#each friends}}
               {{#if visible}}
-                <tr>
+                <tr title="{{profile.firstname}} {{profile.lastname}}">
                   <td>
-                    <a href="/friends/{{_id}}">{{profile.firstname}}</a>
-                  </td>
-                  <td>
-                    <a href="/friends/{{_id}}">{{profile.lastname}}</a>
+                    <a href="/friends/{{_id}}">{{username}}</a>
                   </td>
                   <td class="text-right">
                     <a href="/friends/{{_id}}">{{compliments}}</a>
