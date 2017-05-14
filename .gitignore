@@ -1,2 +1,3 @@
 node_modules/
-settings.json
+dev.json
+prod.json
