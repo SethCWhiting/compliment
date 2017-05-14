@@ -1,0 +1,8 @@
+.friends {
+  tbody tr {
+    cursor: pointer;
+    &:hover {
+      color: $secondary;
+    }
+  }
+}

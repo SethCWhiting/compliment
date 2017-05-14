@@ -47,7 +47,6 @@ function doneEditing() {
   var oldVal = Meteor.user().username;
   var newVal = $('.edit').val();
   if (oldVal !== newVal && newVal.replace(/\s+/g, '') !== '') {
-    console.log(oldVal, newVal);
     Meteor.call('users.update', Meteor.userId(), newVal.toLowerCase(), function(err, res) {
       if (err) console.log(err);
     });

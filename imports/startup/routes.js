@@ -56,7 +56,7 @@ Router.route('/friends/:id', function() {
 });
 
 Router.onBeforeAction(function () {
-  var current_route = Router.current().route.getName() ? Router.current().route.getName() : 'profile';
+  var current_route = Router.current().route.getName() ? Router.current().route.getName() : 'friends';
   if (!Meteor.user()) {
     current_route = 'kiwi';
     this.render('kiwi');

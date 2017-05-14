@@ -14,6 +14,7 @@
           <thead>
             <tr>
               <th>Username</th>
+              <th class="text-center">Complimented</th>
               <th class="text-right"><span class="hidden-xs">Compliments</span> Sent</th>
             </tr>
           </thead>
@@ -21,12 +22,15 @@
             {{#each friends}}
               {{#if visible}}
                 <tr title="{{profile.firstname}} {{profile.lastname}}">
-                  <td>
-                    <a href="/friends/{{_id}}">{{username}}</a>
+                  <td>{{username}}</td>
+                  <td class="text-center">
+                    {{#if complimented}}
+                      <span class="glyphicon glyphicon-ok"><span class="hidden">1</span></span>
+                    {{else}}
+                      <span class="hidden">0</span>
+                    {{/if}}
                   </td>
-                  <td class="text-right">
-                    <a href="/friends/{{_id}}">{{compliments}}</a>
-                  </td>
+                  <td class="text-right">{{compliments}}</td>
                 </tr>
               {{/if}}
             {{/each}}
