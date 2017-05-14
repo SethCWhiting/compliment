@@ -1,0 +1,25 @@
+.profile {
+  .glyphicon {
+    color: $secondary;
+    cursor: pointer;
+    &:active {
+      color: $tertiary;
+    }
+  }
+  .username {
+    cursor: pointer;
+    .glyphicon {
+      opacity: 0;
+    }
+    &:hover {
+      .glyphicon {
+        opacity: 1;
+      }
+    }
+    &:active {
+      .glyphicon {
+        color: $tertiary;
+      }
+    }
+  }
+}

@@ -12,5 +12,8 @@ Meteor.methods({
   },
   'users.name'(id, first, last) {
     return Meteor.users.update({"_id": id}, {"$set": {"profile": {"firstname": first, "lastname": last}}});
+  },
+  'users.update'(id, username) {
+    return Meteor.users.update({"_id": id}, {"$set": {"username": username}});
   }
 });
